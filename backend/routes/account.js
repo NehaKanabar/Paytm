@@ -1,6 +1,6 @@
 // backend/routes/account.js
 const express = require('express');
-const { authMiddleware } = require('../middleware');
+const { authMiddleware } = require('../auth');
 const { Account } = require('../db');
 const { default: mongoose } = require('mongoose');
 
