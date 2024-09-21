@@ -5,7 +5,7 @@ import { Heading } from "../components/Heading";
 import { InputBox } from "../components/InputBox";
 import { SubHeading } from "../components/SubHeading";
 import { useState } from "react";
-import axios from 'axios';
+import axios from "axios";
 
 export const Signup = () => {
     const [firstName, setFirstName] = useState("");
