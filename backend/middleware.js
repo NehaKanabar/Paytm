@@ -1,5 +1,5 @@
 const { JWT_SECRET } = require("./config");
-const { jwtVerify } = require('@panva/jose');
+
 
 const authMiddleware = async (req, res, next) => {
     const authHeader = req.headers.authorization;
@@ -11,7 +11,7 @@ const authMiddleware = async (req, res, next) => {
     const token = authHeader.split(' ')[1];
 
     try {
-        const { payload } = await jwtVerify(token, new TextEncoder().encode(JWT_SECRET));
+        const { payload } = await jwtSign(token, new TextEncoder().encode(JWT_SECRET));
         req.userId = payload.userId;
 
         next();
